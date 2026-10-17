@@ -4,6 +4,16 @@ Detect potholes in road images with a fine-tuned YOLO11n model, plus a Gradio de
 
 **Demo:** runs locally with one command (see [Quickstart](#quickstart)). There is no hosted demo, because Hugging Face now needs a paid plan to host Gradio Spaces.
 
+**Model on Hugging Face:** [SPatel02/pothole-detection-yolo11](https://huggingface.co/SPatel02/pothole-detection-yolo11)
+
+```python
+from huggingface_hub import hf_hub_download
+from ultralytics import YOLO
+
+model = YOLO(hf_hub_download("SPatel02/pothole-detection-yolo11", "best.pt"))
+model.predict("road.jpg", conf=0.25)[0].show()
+```
+
 ## Why
 
 Potholes damage vehicles, cause accidents and are especially dangerous for two-wheelers and cyclists. Many are reported late, or not at all. A small, fast detector that runs on ordinary road photos could help flag damaged road sections automatically, for example from dashcam footage, so repairs can be prioritised sooner.
