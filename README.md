@@ -2,7 +2,7 @@
 
 Detect potholes in road images with a fine-tuned YOLO11n model, plus a Gradio demo.
 
-**Live demo:** _coming soon (Hugging Face Space)_
+**Demo:** runs locally with one command (see [Quickstart](#quickstart)). There is no hosted demo, because Hugging Face now needs a paid plan to host Gradio Spaces.
 
 ## Why
 
@@ -38,7 +38,7 @@ YOLO11n fine-tuned for 30 epochs at 640 px (auto batch size = 11, seed 42), from
 | Validation | 133 | 0.807 | 0.673 | 0.762 | 0.473 |
 | Test | 67 | 0.771 | 0.727 | 0.792 | 0.503 |
 
-- **Inference speed:** 3.44 ms per image (plus 0.87 ms preprocess and 0.60 ms postprocess), averaged over 10 test images on an NVIDIA RTX 4060 Laptop GPU. CPU inference (as on the free Hugging Face Space) is considerably slower.
+- **Inference speed:** 3.44 ms per image (plus 0.87 ms preprocess and 0.60 ms postprocess), averaged over 10 test images on an NVIDIA RTX 4060 Laptop GPU. CPU inference will be slower (not measured).
 - **Training time:** about 1.7 minutes for 30 epochs on the same GPU.
 - Full per-epoch log: [`results/results.csv`](results/results.csv). Training curves: [`results/results.png`](results/results.png). PR curve and confusion matrix are also in [`results/`](results/).
 
@@ -72,6 +72,7 @@ python train.py           # trains, validates on val + test, writes results/ and
 - Add more varied data, especially night, rain and dashcam images, and evaluate on them separately.
 - Add negative examples (cones, manholes, shadows, patches) to reduce false positives.
 - Run on video and export to ONNX for faster CPU inference.
+- Host a public demo (a Gradio Space on a paid Hugging Face plan, or an in-browser ONNX version).
 
 ## License
 
