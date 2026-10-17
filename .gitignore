@@ -10,6 +10,8 @@ venv/
 runs/
 datasets/
 *.cache
+*.pt
+!weights/best.pt
 
 # Secrets
 .env
