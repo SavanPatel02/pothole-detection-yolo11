@@ -1,0 +1,10 @@
+# Roboflow Pothole dataset v1 (665 images, ODbL v1.0)
+# https://universe.roboflow.com/brad-dwyer/pothole-voxrl/dataset/1
+# Download with: python download_data.py
+path: datasets/pothole  # resolved relative to this file by train.py
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: pothole
