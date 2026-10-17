@@ -60,6 +60,12 @@ python download_data.py   # asks for a free Roboflow API key (hidden prompt, nev
 python train.py           # trains, validates on val + test, writes results/ and weights/best.pt
 ```
 
+## Project structure
+
+- `weights/`: the trained model, `best.pt` (5.4 MB), loaded by `app.py`.
+- `results/`: output of the training run: `metrics.json` (val/test metrics and speed), `results.csv` (per-epoch log), training curves, PR curve, confusion matrix and validation predictions.
+- `assets/`: the sample prediction images shown in this README.
+
 ## Dataset
 
 [Pothole dataset, v1](https://universe.roboflow.com/brad-dwyer/pothole-voxrl/dataset/1) on Roboflow Universe: 665 road images with one class, `pothole` (465 train / 133 valid / 67 test, 1,740 boxes in total). Created by **Atikur Rahman Chitholian** as part of an undergraduate thesis and originally published on Kaggle; re-split 70/20/10 by Roboflow.
